@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Mapping & Vulnerability Scanner</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f8; margin: 0; padding: 0; }
+        h1 { text-align: center; background-color: #222; color: white; padding: 20px; margin: 0; }
+        form { max-width: 500px; margin: 50px auto; background: white; padding: 30px; border-radius: 10px;
+               box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label { font-weight: bold; display: block; margin-top: 15px; }
+        input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+        button { width: 100%; margin-top: 20px; background-color: #007bff; color: white; border: none; padding: 12px;
+                 border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+        .error { color: red; text-align: center; margin-top: 10px; }
+        footer { text-align: center; margin-top: 40px; font-size: 14px; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Network Mapping & Vulnerability Scanner</h1>
+
+    <form action="/" method="POST">
+        <label>Target IP or Range:</label>
+        <input type="text" name="targets" placeholder="e.g. 192.168.1.0/24" required>
+
+        <label>Scan Type:</label>
+        <select name="scan_type">
+            <option value="discovery">Discovery Scan (Ping Sweep)</option>
+            <option value="fullscan">Full Port & Service Scan</option>
+        </select>
+
+        <button type="submit">Start Scan</button>
+    </form>
+
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <footer>© 2025 Network Mapper | Flask Project Demo</footer>
+</body>
+</html>
