@@ -16,4 +16,26 @@
 
 ---
 
-## Project structure
+
+## Requirements
+- Python 3.8+
+- `nmap` binary installed on the system (https://nmap.org)
+- Recommended virtualenv usage
+
+Install Python dependencies:
+```bash
+pip install -r requirements.txt
+
+
+
+
+## CLI usage examples
+
+python network_scanner_cli.py discover --targets "192.168.1.0/24"
+python network_scanner_cli.py scan --targets "192.168.1.10-20" --nse false
+python network_scanner_cli.py report --nmap-xml reports/fullscan_... .xml
+
+
+## Development & Testing
+pip install -r requirements.txt
+pytest -q
